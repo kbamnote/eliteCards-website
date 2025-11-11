@@ -1,0 +1,72 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Poppins:wght@400;600;700&display=swap');
+
+:root {
+  --color-primary: #7C3AED;
+  --color-secondary: #06B6D4;
+  --color-background: #0B0F1A;
+  --color-surface: #111827;
+  --color-accent: #22D3EE;
+  --color-text-primary: #E5E7EB;
+  --color-text-secondary: #9CA3AF;
+}
+
+html, body, #root {
+  height: 100%;
+}
+
+body {
+  background: var(--color-background);
+  color: var(--color-text-primary);
+  font-family: 'Inter', 'Poppins', 'Montserrat', system-ui, -apple-system;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.glass {
+  backdrop-filter: blur(12px);
+  background: rgba(17, 24, 39, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.1), 0 20px 40px rgba(0,0,0,0.35);
+}
+
+.neon {
+  box-shadow: 0 0 30px rgba(34, 211, 238, 0.35);
+}
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Poppins:wght@400;600;700&display=swap');
+
+:root {
+  --color-primary: #7C3AED;
+  --color-secondary: #06B6D4;
+  --color-background: #0B0F1A;
+  --color-surface: #111827;
+  --color-accent: #22D3EE;
+  --color-text-primary: #E5E7EB;
+  --color-text-secondary: #9CA3AF;
+}
+
+html, body, #root {
+  height: 100%;
+}
+
+body {
+  background: var(--color-background);
+  color: var(--color-text-primary);
+  font-family: 'Inter', 'Poppins', 'Montserrat', system-ui, -apple-system;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.glass {
+  backdrop-filter: blur(12px);
+  background: rgba(17, 24, 39, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.1), 0 20px 40px rgba(0,0,0,0.35);
+}
+
+.neon {
+  box-shadow: 0 0 30px rgba(34, 211, 238, 0.35);
+}
