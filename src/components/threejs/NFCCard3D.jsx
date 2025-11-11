@@ -42,9 +42,9 @@ function NFCCard3D() {
       >
         <boxGeometry args={[1.6, 1, 0.08]} />
         <meshStandardMaterial
-          color="#1a1a2e"
-          roughness={0.2}
-          metalness={0.8}
+          color="#d4af37"
+          roughness={0.15}
+          metalness={1}
         />
       </mesh>
 
