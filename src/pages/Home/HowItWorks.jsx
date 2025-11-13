@@ -40,10 +40,18 @@ function HowItWorks() {
       {/* Steps */}
       <div className="mt-10 grid md:grid-cols-4 gap-6">
         {steps.map((s) => (
-          <div key={s.title} className="rounded-xl p-6 border bg-gradient-to-br from-[var(--rich-black)]/10 to-[var(--dark-jungle-green)]/10">
-            <p className="text-xs tracking-widest text-[var(--text-secondary)]">{s.label}</p>
-            <h3 className="mt-2 text-lg font-semibold text-[var(--text-primary)]">{s.title}</h3>
-            <p className="mt-2 text-sm text-[var(--text-secondary)]">{s.desc}</p>
+          <div key={s.title} className="group relative">
+            {/* hover glow */}
+            <div className="absolute -inset-0.5 rounded-xl bg-gradient-to-r from-[var(--india-green)] to-[var(--mango-green)] opacity-0 group-hover:opacity-25 blur transition duration-300" />
+            {/* card */}
+            <div
+              className="relative rounded-xl p-6 border bg-gradient-to-br from-[var(--rich-black)]/10 to-[var(--dark-jungle-green)]/10 transition-transform duration-300 ease-out transform group-hover:-translate-y-1 group-hover:scale-[1.02] hover:border-[var(--mango-green)] hover:shadow-lg"
+              style={{ borderColor: 'var(--dark-jungle-green)' }}
+            >
+              <p className="text-xs tracking-widest text-[var(--text-secondary)] group-hover:text-[var(--mango-green)]">{s.label}</p>
+              <h3 className="mt-2 text-lg font-semibold text-[var(--text-primary)]">{s.title}</h3>
+              <p className="mt-2 text-sm text-[var(--text-secondary)]">{s.desc}</p>
+            </div>
           </div>
         ))}
       </div>

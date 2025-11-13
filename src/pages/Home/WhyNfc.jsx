@@ -53,11 +53,11 @@ function WhyNfc() {
 
         {/* Right media (GIF) */}
         <div className="relative">
-          <div className="absolute -inset-2 bg-gradient-to-br from-[var(--india-green)]/20 to-[var(--yellow-green)]/20 rounded-2xl blur-lg" />
+          <div className="absolute -inset-2" />
           <img
             src={GIF_URL}
             alt="NFC smart card demo"
-            className="relative w-full h-full object-cover rounded-2xl border"
+            className="relative w-full h-full object-cover"
             style={{ borderColor: 'var(--dark-jungle-green)' }}
             loading="lazy"
           />
