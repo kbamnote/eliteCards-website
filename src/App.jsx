@@ -1,28 +1,13 @@
-import React, { Suspense, useEffect } from 'react'
+import React, { Suspense } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
 import { useLocation } from 'react-router-dom'
-import Lenis from 'lenis'
 import Layout from './components/layout/Layout.jsx'
 import AppRoutes from './routes/AppRoutes.jsx'
 
 function App() {
   const location = useLocation()
 
-  useEffect(() => {
-    const lenis = new Lenis({
-      lerp: 0.1,
-      smoothWheel: true,
-      smoothTouch: false,
-    })
-    function raf(time) {
-      lenis.raf(time)
-      requestAnimationFrame(raf)
-    }
-    requestAnimationFrame(raf)
-    return () => {
-      lenis.destroy()
-    }
-  }, [])
+  // Removed Lenis smooth scrolling to prevent scroll issues.
 
   return (
     <Layout>

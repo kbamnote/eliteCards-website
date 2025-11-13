@@ -29,6 +29,9 @@ html, body, #root {
   height: 100%;
 }
 
+/* Native smooth scrolling for anchor jumps */
+html { scroll-behavior: smooth; }
+
 body {
   background: var(--rich-black);
   color: var(--text-primary);

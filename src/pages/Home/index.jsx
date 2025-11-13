@@ -6,6 +6,7 @@ import WhyNfc from './WhyNfc'
 import HowItWorks from './HowItWorks'
 import CTASection from './CTASection'
 import Comparison from './Comparison'
+import Pricing from './Pricing'
 
 function Home() {
   return (
@@ -15,6 +16,7 @@ function Home() {
       <Features />
       <Comparison />
       <WhyNfc />
+      <Pricing/>
       <HowItWorks />
       <CTASection />
     </>
