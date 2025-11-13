@@ -1,12 +1,27 @@
+// Centralized palette per request
+const palette = {
+  richBlack: '#010B12',
+  darkJungleGreen: '#1E1F21',
+  indiaGreen: '#0C8900',
+  yellowGreen: '#2BC20E',
+  mangoGreen: '#9CFF00',
+  neonGreen: '#39FF13',
+  textPrimary: '#E0E0E0',
+  textSecondary: '#A0A0A0',
+};
+
 export const theme = {
   colors: {
-    primary: '#7C3AED',
-    secondary: '#06B6D4',
-    background: '#0B0F1A',
-    surface: '#111827',
-    accent: '#22D3EE',
-    textPrimary: '#E5E7EB',
-    textSecondary: '#9CA3AF',
+    // Named palette
+    ...palette,
+    // Legacy aliases for existing components
+    primary: palette.indiaGreen,
+    secondary: palette.yellowGreen,
+    background: palette.richBlack,
+    surface: palette.darkJungleGreen,
+    accent: palette.mangoGreen,
+    textPrimary: palette.textPrimary,
+    textSecondary: palette.textSecondary,
   },
   typography: {
     fontFamily: `'Inter', 'Poppins', 'Montserrat', system-ui, -apple-system`,
@@ -20,14 +35,14 @@ export const theme = {
     glass: 'inset 0 1px 0 rgba(255,255,255,0.1), 0 20px 40px rgba(0,0,0,0.35)',
   },
   gradients: {
-    primary: 'linear-gradient(135deg, #7C3AED 0%, #22D3EE 100%)',
-    dark: 'linear-gradient(135deg, #0B0F1A 0%, #111827 100%)',
+    primary: `linear-gradient(135deg, ${palette.mangoGreen} 0%, ${palette.indiaGreen} 100%)`,
+    dark: `linear-gradient(135deg, ${palette.richBlack} 0%, ${palette.darkJungleGreen} 100%)`,
   },
   lighting: {
     ambient: 0.4,
     directional: { intensity: 1.2, color: '#ffffff' },
-    point: { intensity: 0.8, color: '#7C3AED' },
-    rim: { intensity: 0.6, color: '#22D3EE' },
+    point: { intensity: 0.8, color: palette.indiaGreen },
+    rim: { intensity: 0.6, color: palette.neonGreen },
   },
 };
 

@@ -14,7 +14,7 @@ export default function Header() {
     <header className="fixed top-0 left-0 right-0 z-50">
       <div className="glass mx-auto max-w-7xl px-6 py-3 flex items-center justify-between">
         <NavLink to="/" className="text-xl font-bold tracking-tight">
-          Elite<span className="text-indigo-400">Cards</span>
+          Elite<span className="text-[var(--mango-green)]">Cards</span>
         </NavLink>
         <nav className="flex items-center gap-6">
           {navItems.map((item) => (
@@ -23,7 +23,7 @@ export default function Header() {
               to={item.to}
               className={({ isActive }) =>
                 `text-sm font-medium transition-colors ${
-                  isActive ? 'text-indigo-300' : 'text-gray-300 hover:text-white'
+                  isActive ? 'text-[var(--mango-green)]' : 'text-[var(--text-secondary)] hover:text-[var(--text-primary)]'
                 }`
               }
             >

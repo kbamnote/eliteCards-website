@@ -21,9 +21,9 @@ function Features() {
             viewport={{ once: true }}
             className="glass rounded-xl p-6 hover:translate-y-[-2px] transition"
           >
-            <f.icon className="w-8 h-8 text-cyan-300" />
+            <f.icon className="w-8 h-8 text-[var(--yellow-green)]" />
             <h3 className="mt-4 text-lg font-semibold">{f.title}</h3>
-            <p className="mt-2 text-sm text-gray-300">{f.desc}</p>
+            <p className="mt-2 text-sm text-[var(--text-secondary)]">{f.desc}</p>
           </motion.div>
         ))}
       </div>

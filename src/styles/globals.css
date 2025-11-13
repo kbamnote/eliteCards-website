@@ -5,13 +5,24 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Poppins:wght@400;600;700&display=swap');
 
 :root {
-  --color-primary: #7C3AED;
-  --color-secondary: #06B6D4;
-  --color-background: #0B0F1A;
-  --color-surface: #111827;
-  --color-accent: #22D3EE;
-  --color-text-primary: #E5E7EB;
-  --color-text-secondary: #9CA3AF;
+  /* New palette */
+  --rich-black: #010B12;
+  --dark-jungle-green: #1E1F21;
+  --india-green: #0C8900;
+  --yellow-green: #2BC20E;
+  --mango-green: #9CFF00;
+  --neon-green: #39FF13;
+  --text-primary: #E0E0E0;
+  --text-secondary: #A0A0A0;
+
+  /* Legacy aliases for existing styles */
+  --color-primary: var(--india-green);
+  --color-secondary: var(--yellow-green);
+  --color-background: var(--rich-black);
+  --color-surface: var(--dark-jungle-green);
+  --color-accent: var(--mango-green);
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
 }
 
 html, body, #root {
@@ -19,8 +30,8 @@ html, body, #root {
 }
 
 body {
-  background: var(--color-background);
-  color: var(--color-text-primary);
+  background: var(--rich-black);
+  color: var(--text-primary);
   font-family: 'Inter', 'Poppins', 'Montserrat', system-ui, -apple-system;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -28,45 +39,21 @@ body {
 
 .glass {
   backdrop-filter: blur(12px);
-  background: rgba(17, 24, 39, 0.4);
+  background: color-mix(in srgb, var(--dark-jungle-green) 40%, transparent);
   border: 1px solid rgba(255, 255, 255, 0.06);
   box-shadow: inset 0 1px 0 rgba(255,255,255,0.1), 0 20px 40px rgba(0,0,0,0.35);
 }
 
 .neon {
-  box-shadow: 0 0 30px rgba(34, 211, 238, 0.35);
-}
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Poppins:wght@400;600;700&display=swap');
-
-:root {
-  --color-primary: #7C3AED;
-  --color-secondary: #06B6D4;
-  --color-background: #0B0F1A;
-  --color-surface: #111827;
-  --color-accent: #22D3EE;
-  --color-text-primary: #E5E7EB;
-  --color-text-secondary: #9CA3AF;
+  box-shadow: 0 0 30px color-mix(in srgb, var(--neon-green) 40%, transparent);
 }
 
-html, body, #root {
-  height: 100%;
-}
-
-body {
-  background: var(--color-background);
-  color: var(--color-text-primary);
-  font-family: 'Inter', 'Poppins', 'Montserrat', system-ui, -apple-system;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-.glass {
-  backdrop-filter: blur(12px);
-  background: rgba(17, 24, 39, 0.4);
-  border: 1px solid rgba(255, 255, 255, 0.06);
-  box-shadow: inset 0 1px 0 rgba(255,255,255,0.1), 0 20px 40px rgba(0,0,0,0.35);
-}
-
-.neon {
-  box-shadow: 0 0 30px rgba(34, 211, 238, 0.35);
-}
+/* Utility helpers to reference palette easily */
+.bg-rich { background-color: var(--rich-black); }
+.bg-secondary { background-color: var(--dark-jungle-green); }
+.text-primary { color: var(--text-primary); }
+.text-secondary { color: var(--text-secondary); }
+.border-primary { border-color: var(--india-green); }
+.border-secondary { border-color: var(--yellow-green); }
+.bg-accent { background-color: var(--mango-green); }
+.glow-neon { box-shadow: 0 0 24px color-mix(in srgb, var(--neon-green) 50%, transparent); }

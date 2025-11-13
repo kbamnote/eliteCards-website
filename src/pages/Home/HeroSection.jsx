@@ -4,13 +4,13 @@ import Scene from '../../components/threejs/Scene'
 
 function HeroSection() {
   return (
-    <section className="relative overflow-hidden pt-24 pb-16 bg-gradient-to-b from-slate-950 via-purple-950/20 to-slate-950">
-      <div className="absolute inset-0 pointer-events-none bg-gradient-to-b from-transparent via-purple-500/5 to-black/60" />
+    <section className="relative overflow-hidden pt-24 pb-16 bg-gradient-to-b from-[var(--rich-black)] via-[var(--dark-jungle-green)]/20 to-[var(--rich-black)]">
+      <div className="absolute inset-0 pointer-events-none bg-gradient-to-b from-transparent via-[var(--india-green)]/5 to-[var(--rich-black)]/60" />
       
       {/* Animated background elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl animate-pulse" />
-        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-violet-500/10 rounded-full blur-3xl animate-pulse delay-1000" />
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[var(--india-green)]/10 rounded-full blur-3xl animate-pulse" />
+        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-[var(--yellow-green)]/10 rounded-full blur-3xl animate-pulse delay-1000" />
       </div>
       
       <div className="mx-auto max-w-7xl px-6 grid md:grid-cols-2 gap-10 items-center relative z-10">
@@ -24,17 +24,18 @@ function HeroSection() {
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.2 }}
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-violet-600/20 to-purple-600/20 border border-violet-500/30 mb-6"
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-[var(--india-green)]/20 to-[var(--yellow-green)]/20 border mb-6"
+            style={{ borderColor: 'var(--india-green)' }}
           >
-            <span className="w-2 h-2 bg-violet-400 rounded-full animate-pulse" />
-            <span className="text-sm font-semibold text-violet-300">Elite Collection 2025</span>
+            <span className="w-2 h-2 bg-[var(--yellow-green)] rounded-full animate-pulse" />
+            <span className="text-sm font-semibold text-[var(--mango-green)]">Elite Collection 2025</span>
           </motion.div>
 
-          <h1 className="text-5xl md:text-6xl font-bold tracking-tight bg-gradient-to-r from-white via-purple-200 to-violet-300 bg-clip-text text-transparent">
+          <h1 className="text-5xl md:text-6xl font-bold tracking-tight bg-gradient-to-r from-[var(--text-primary)] via-[var(--mango-green)]/40 to-[var(--yellow-green)]/40 bg-clip-text text-transparent">
             Modern Elite 3D NFC Cards
           </h1>
           
-          <p className="mt-6 text-lg text-gray-300 leading-relaxed">
+          <p className="mt-6 text-lg text-[var(--text-secondary)] leading-relaxed">
             Interactive, premium, and optimized for performance. Elevate your brand with futuristic design and cutting-edge technology.
           </p>
           
@@ -46,14 +47,14 @@ function HeroSection() {
               transition={{ delay: 0.4 }}
               className="flex items-center gap-3"
             >
-              <div className="w-10 h-10 rounded-lg bg-violet-600/20 flex items-center justify-center">
-                <svg className="w-5 h-5 text-violet-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <div className="w-10 h-10 rounded-lg bg-[var(--india-green)]/20 flex items-center justify-center">
+                <svg className="w-5 h-5 text-[var(--mango-green)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                 </svg>
               </div>
               <div>
-                <p className="text-sm font-semibold text-white">NFC Enabled</p>
-                <p className="text-xs text-gray-400">Instant connect</p>
+                <p className="text-sm font-semibold text-[var(--text-primary)]">NFC Enabled</p>
+                <p className="text-xs text-[var(--text-secondary)]">Instant connect</p>
               </div>
             </motion.div>
             
@@ -63,14 +64,14 @@ function HeroSection() {
               transition={{ delay: 0.5 }}
               className="flex items-center gap-3"
             >
-              <div className="w-10 h-10 rounded-lg bg-purple-600/20 flex items-center justify-center">
-                <svg className="w-5 h-5 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <div className="w-10 h-10 rounded-lg bg-[var(--yellow-green)]/20 flex items-center justify-center">
+                <svg className="w-5 h-5 text-[var(--yellow-green)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
                 </svg>
               </div>
               <div>
-                <p className="text-sm font-semibold text-white">Premium Design</p>
-                <p className="text-xs text-gray-400">Limited edition</p>
+                <p className="text-sm font-semibold text-[var(--text-primary)]">Premium Design</p>
+                <p className="text-xs text-[var(--text-secondary)]">Limited edition</p>
               </div>
             </motion.div>
           </div>
@@ -79,7 +80,8 @@ function HeroSection() {
             <motion.a 
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="px-8 py-4 rounded-xl bg-gradient-to-r from-violet-600 to-purple-600 hover:from-violet-700 hover:to-purple-700 text-white font-semibold transition shadow-lg shadow-violet-500/50" 
+              className="px-8 py-4 rounded-xl bg-gradient-to-r from-[var(--mango-green)] to-[var(--india-green)] hover:from-[var(--yellow-green)] hover:to-[var(--india-green)] text-[var(--rich-black)] font-semibold transition shadow-lg" 
+              style={{ boxShadow: '0 0 24px color-mix(in srgb, var(--neon-green) 40%, transparent)' }}
               href="#"
             >
               Get Started
@@ -87,7 +89,8 @@ function HeroSection() {
             <motion.a 
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="px-8 py-4 rounded-xl border border-white/20 hover:border-white/40 hover:bg-white/5 text-white font-semibold transition backdrop-blur-sm" 
+              className="px-8 py-4 rounded-xl border text-[var(--text-primary)] font-semibold transition backdrop-blur-sm hover:bg-[var(--dark-jungle-green)]/10" 
+              style={{ borderColor: 'var(--yellow-green)' }}
               href="#"
             >
               View Templates
@@ -123,15 +126,15 @@ function HeroSection() {
           className="relative"
         >
           {/* Decorative elements */}
-          <div className="absolute -inset-4 bg-gradient-to-r from-violet-600/20 to-purple-600/20 rounded-3xl blur-2xl" />
+          <div className="absolute -inset-4 bg-gradient-to-r from-[var(--india-green)]/20 to-[var(--yellow-green)]/20 rounded-3xl blur-2xl" />
           
-          <div className="relative glass rounded-2xl p-6 border border-white/10 shadow-2xl shadow-purple-500/20">
+          <div className="relative glass rounded-2xl p-6 border" style={{ borderColor: 'rgba(255,255,255,0.1)', boxShadow: '0 20px 40px rgba(0,0,0,0.35)' }}>
             <Scene height={420} />
             
             {/* Card info overlay */}
             <div className="mt-4 flex items-center justify-between text-sm">
-              <span className="text-gray-400">Interactive 3D Model</span>
-              <span className="text-violet-400 font-semibold">Drag to rotate</span>
+              <span className="text-[var(--text-secondary)]">Interactive 3D Model</span>
+              <span className="text-[var(--yellow-green)] font-semibold">Drag to rotate</span>
             </div>
           </div>
         </motion.div>
