@@ -25,19 +25,28 @@ export default function Header() {
     checkScreenSize()
     
     // Add resize listener
-    window.addEventListener('resize', checkScreenSize)
+    const resizeHandler = () => {
+      checkScreenSize()
+      // Close mobile menu when resizing to large screen
+      if (window.innerWidth >= 1024) {
+        setOpen(false)
+      }
+    }
+    
+    window.addEventListener('resize', resizeHandler)
     
     // Cleanup
-    return () => window.removeEventListener('resize', checkScreenSize)
+    return () => window.removeEventListener('resize', resizeHandler)
   }, [])
   
   return (
     <header className="fixed top-0 left-0 right-0 z-50">
       <div className="glass mx-auto max-w-7xl px-6 py-3 flex items-center justify-between relative">
-        <NavLink to="/" className="flex items-center gap-3">
-          <img src={logo} alt="Elite Cards" className="h-8 w-auto" loading="lazy" />
-          <span className="text-xl font-bold tracking-tight">
-            Elite<span className="text-[var(--mango-green)]">Cards</span>
+        {/* Logo and text stacked vertically */}
+        <NavLink to="/" className="flex flex-col items-center gap-1" aria-label="Elite Cards Home">
+          <img src={logo} alt="Elite Cards Logo" className="h-8 w-auto" loading="eager" />
+          <span className="text-sm font-bold tracking-tight text-center">
+            Elite<span className="text-(--mango-green)">Cards</span>
           </span>
         </NavLink>
         
@@ -50,7 +59,7 @@ export default function Header() {
                 to={item.to}
                 className={({ isActive }) =>
                   `text-sm font-medium transition-colors ${
-                    isActive ? 'text-[var(--mango-green)]' : 'text-[var(--text-secondary)] hover:text-[var(--text-primary)]'
+                    isActive ? 'text-(--mango-green)' : 'text-(--text-secondary) hover:text-(--text-primary)'
                   }`
                 }
               >
@@ -63,7 +72,7 @@ export default function Header() {
         {/* Mobile Hamburger Button - hidden on large screens */}
         {!isLargeScreen && (
           <button
-            className="inline-flex items-center justify-center rounded-lg p-2 text-[var(--text-primary)]"
+            className="inline-flex items-center justify-center rounded-lg p-2 text-(--text-primary)"
             aria-label="Toggle menu"
             aria-expanded={open}
             onClick={() => setOpen((v) => !v)}
@@ -75,7 +84,7 @@ export default function Header() {
         {/* Mobile Menu - hidden on large screens */}
         {open && !isLargeScreen && (
           <div className="absolute inset-x-0 top-full">
-            <div className="mx-3 mt-2 rounded-xl px-4 py-3 border shadow-lg bg-[var(--rich-black)]" style={{ borderColor: 'var(--dark-jungle-green)' }}>
+            <div className="mx-3 mt-2 rounded-xl px-4 py-3 border shadow-lg bg-(--rich-black)" style={{ borderColor: 'var(--dark-jungle-green)' }}>
               <div className="flex flex-col">
                 {navItems.map((item) => (
                   <NavLink
@@ -84,7 +93,7 @@ export default function Header() {
                     onClick={() => setOpen(false)}
                     className={({ isActive }) =>
                       `px-2 py-2 rounded-lg text-sm font-medium transition-colors ${
-                        isActive ? 'text-[var(--mango-green)]' : 'text-[var(--text-secondary)] hover:text-[var(--text-primary)]'
+                        isActive ? 'text-(--mango-green)' : 'text-(--text-secondary) hover:text-(--text-primary)'
                       }`
                     }
                   >

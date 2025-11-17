@@ -7,7 +7,6 @@ export default function Footer() {
       <div className="mx-auto max-w-7xl px-6 py-8 text-sm text-gray-400 flex items-center justify-between">
         <p>© {new Date().getFullYear()} Elite Digital Cards</p>
         <div className="flex items-center gap-4">
-          <h1>hi</h1>
           <a className="hover:text-white" href="#" aria-label="Github">
             <Github className="w-5 h-5" />
           </a>

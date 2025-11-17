@@ -8,82 +8,82 @@ export default function ContactForm() {
       <SectionTitle title="Contact" subtitle="Get in touch and send us a message" />
 
       <div className="grid lg:grid-cols-2 gap-8 items-stretch">
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 min-h-[440px]">
-          <div className="glass p-6 rounded-xl min-h-[140px]">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 min-h-80">
+          <div className="glass p-4 rounded-xl min-h-[100px]">
             <div className="flex items-start gap-3">
-              <MapPin className="w-6 h-6 text-[var(--mango-green)]" />
+              <MapPin className="w-5 h-5 text-(--mango-green) mt-0.5" />
               <div>
-                <h3 className="font-semibold">Office Address</h3>
-                <p className="text-sm text-gray-400">Elite Associate, Pune, Maharashtra, India</p>
+                <h3 className="font-semibold text-sm">Office Address</h3>
+                <p className="text-xs text-gray-400">Elite Associate, Pune, Maharashtra, India</p>
               </div>
             </div>
           </div>
 
-          <div className="glass p-6 rounded-xl min-h-[140px]">
+          <div className="glass p-4 rounded-xl min-h-[100px]">
             <div className="flex items-start gap-3">
-              <Phone className="w-6 h-6 text-[var(--mango-green)]" />
+              <Phone className="w-5 h-5 text-(--mango-green) mt-0.5" />
               <div>
-                <h3 className="font-semibold">Phone</h3>
-                <p className="text-sm text-gray-400">
-                  <a href="tel:+919999999999" className="hover:text-[var(--mango-green)]">+91 99999 99999</a>
+                <h3 className="font-semibold text-sm">Phone</h3>
+                <p className="text-xs text-gray-400">
+                  <a href="tel:+919999999999" className="hover:text-(--mango-green)">+91 99999 99999</a>
                 </p>
               </div>
             </div>
           </div>
 
-          <div className="glass p-6 rounded-xl min-h-[140px]">
+          <div className="glass p-4 rounded-xl min-h-[100px]">
             <div className="flex items-start gap-3">
-              <Mail className="w-6 h-6 text-[var(--mango-green)]" />
+              <Mail className="w-5 h-5 text-(--mango-green) mt-0.5" />
               <div>
-                <h3 className="font-semibold">Email</h3>
-                <p className="text-sm text-gray-400">
-                  <a href="mailto:hello@eliteassociate.in" className="hover:text-[var(--mango-green)]">hello@eliteassociate.in</a>
+                <h3 className="font-semibold text-sm">Email</h3>
+                <p className="text-xs text-gray-400">
+                  <a href="mailto:hello@eliteassociate.in" className="hover:text-(--mango-green)">hello@eliteassociate.in</a>
                 </p>
               </div>
             </div>
           </div>
-          <div className="glass p-6 rounded-xl min-h-[140px]">
+          <div className="glass p-4 rounded-xl min-h-[100px]">
             <div className="flex items-start gap-3">
-              <Clock className="w-6 h-6 text-[var(--mango-green)]" />
+              <Clock className="w-5 h-5 text-(--mango-green) mt-0.5" />
               <div>
-                <h3 className="font-semibold">Business Hours</h3>
-                <p className="text-sm text-gray-400">Mon–Sat: 9:00 AM – 7:00 PM</p>
+                <h3 className="font-semibold text-sm">Business Hours</h3>
+                <p className="text-xs text-gray-400">Mon–Sat: 9:00 AM – 7:00 PM</p>
               </div>
             </div>
           </div>
 
-          <div className="glass p-6 rounded-xl min-h-[140px]">
+          <div className="glass p-4 rounded-xl min-h-[100px]">
             <div className="flex items-start gap-3">
-              <Instagram className="w-6 h-6 text-[var(--mango-green)]" />
+              <Instagram className="w-5 h-5 text-(--mango-green) mt-0.5" />
               <div>
-                <h3 className="font-semibold">Instagram</h3>
-                <p className="text-sm text-gray-400">
-                  <a href="#" className="hover:text-[var(--mango-green)]">@eliteassociate</a>
+                <h3 className="font-semibold text-sm">Instagram</h3>
+                <p className="text-xs text-gray-400">
+                  <a href="#" className="hover:text-(--mango-green)">@eliteassociate</a>
                 </p>
               </div>
             </div>
           </div>
 
-          <div className="glass p-6 rounded-xl min-h-[140px]">
+          <div className="glass p-4 rounded-xl min-h-[100px]">
             <div className="flex items-start gap-3">
-              <Facebook className="w-6 h-6 text-[var(--mango-green)]" />
+              <Facebook className="w-5 h-5 text-(--mango-green) mt-0.5" />
               <div>
-                <h3 className="font-semibold">Facebook</h3>
-                <p className="text-sm text-gray-400">
-                  <a href="#" className="hover:text-[var(--mango-green)]">Elite Associate</a>
+                <h3 className="font-semibold text-sm">Facebook</h3>
+                <p className="text-xs text-gray-400">
+                  <a href="#" className="hover:text-(--mango-green)">Elite Associate</a>
                 </p>
               </div>
             </div>
           </div>
         </div>
 
-        <div className="glass p-6 rounded-xl min-h-[440px]">
-          <form className="grid md:grid-cols-2 gap-4">
-            <input className="bg-transparent border border-white/10 rounded p-2" placeholder="Name" />
-            <input className="bg-transparent border border-white/10 rounded p-2" placeholder="Email" />
-            <input className="bg-transparent border border-white/10 rounded p-2 md:col-span-2" placeholder="Phone" type="tel" inputMode="tel" />
-            <textarea className="md:col-span-2 bg-transparent border border-white/10 rounded p-2" placeholder="Message" rows="4" />
-            <button className="md:col-span-2 inline-flex items-center justify-center px-5 py-2.5 rounded-xl bg-gradient-to-r from-[var(--mango-green)] to-[var(--india-green)] text-[var(--rich-black)] font-semibold">Send</button>
+        <div className="glass p-4 rounded-xl min-h-80">
+          <form className="grid md:grid-cols-2 gap-3">
+            <input className="bg-transparent border border-white/10 rounded p-2 text-sm" placeholder="Name" />
+            <input className="bg-transparent border border-white/10 rounded p-2 text-sm" placeholder="Email" />
+            <input className="bg-transparent border border-white/10 rounded p-2 md:col-span-2 text-sm" placeholder="Phone" type="tel" inputMode="tel" />
+            <textarea className="md:col-span-2 bg-transparent border border-white/10 rounded p-2 text-sm" placeholder="Message" rows="3" />
+            <button className="md:col-span-2 inline-flex items-center justify-center px-4 py-2 rounded-lg bg-linear-to-r from-(--mango-green) to-(--india-green) text-(--rich-black) font-semibold text-sm">Send</button>
           </form>
         </div>
       </div>

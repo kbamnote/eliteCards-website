@@ -22,32 +22,72 @@ function NFCCardShowcase() {
     renderer.toneMapping = THREE.ACESFilmicToneMapping;
     renderer.toneMappingExposure = 1.2;
 
-    // Card geometry
+    // Create a cube texture for city reflections
+    const createCityEnvironment = () => {
+      // Create a simple cityscape texture for reflections
+      const canvas = document.createElement('canvas');
+      canvas.width = 512;
+      canvas.height = 512;
+      const ctx = canvas.getContext('2d');
+      
+      // Sky gradient
+      const gradient = ctx.createLinearGradient(0, 0, 0, canvas.height);
+      gradient.addColorStop(0, '#87CEEB');
+      gradient.addColorStop(1, '#ffffff');
+      ctx.fillStyle = gradient;
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+      
+      // Buildings
+      ctx.fillStyle = '#444444';
+      for (let i = 0; i < 50; i++) {
+        const x = Math.random() * canvas.width;
+        const width = 20 + Math.random() * 40;
+        const height = 50 + Math.random() * 200;
+        const y = canvas.height - height;
+        ctx.fillRect(x, y, width, height);
+        
+        // Windows
+        ctx.fillStyle = '#FFFF00';
+        for (let j = 0; j < 10; j++) {
+          const wx = x + 5 + Math.random() * (width - 10);
+          const wy = y + 10 + Math.random() * (height - 20);
+          ctx.fillRect(wx, wy, 3, 3);
+        }
+        ctx.fillStyle = '#444444';
+      }
+      
+      // Convert to texture
+      const texture = new THREE.CanvasTexture(canvas);
+      return texture;
+    };
+
+    // Card geometry with enhanced golden appearance and city reflections
+    const cityTexture = createCityEnvironment();
     const cardGeometry = new THREE.BoxGeometry(2.5, 1.6, 0.08);
     const cardMaterial = new THREE.MeshPhysicalMaterial({
-  color: new THREE.Color(0xffd700), // brighter gold
-  metalness: 1.0,                   // fully metallic
-  roughness: 0.05,                  // smoother for shine
-  clearcoat: 1.0,                   // extra glossy top coat
-  clearcoatRoughness: 0.1,
-  reflectivity: 1.0,
-  envMapIntensity: 1.5,             // makes reflections stronger
-});
+      color: new THREE.Color(0xffd700), // Golden color
+      metalness: 1.0,                   // Fully metallic
+      roughness: 0.05,                  // Smoother for shine
+      clearcoat: 1.0,                   // Extra glossy top coat
+      clearcoatRoughness: 0.05,
+      reflectivity: 1.0,
+      envMap: cityTexture,              // City reflection map
+      envMapIntensity: 2.5,             // Stronger reflections
+      emissive: new THREE.Color(0xffd700), // Golden emissive
+      emissiveIntensity: 0.1,           // Subtle glow
+    });
 
     const card = new THREE.Mesh(cardGeometry, cardMaterial);
-    // Removed external environment textures to avoid loading errors.
-    // Rely on lights and material parameters for metallic appearance.
-
     scene.add(card);
 
-    // Name label (front side)
+    // Name label (front side) with black text
     const labelCanvas = document.createElement('canvas');
     labelCanvas.width = 512;
     labelCanvas.height = 128;
     const ctx = labelCanvas.getContext('2d');
     ctx.clearRect(0, 0, labelCanvas.width, labelCanvas.height);
     ctx.font = 'bold 64px sans-serif';
-    ctx.fillStyle = theme.colors.textPrimary;
+    ctx.fillStyle = '#000000'; // Black color
     ctx.textAlign = 'center';
     ctx.textBaseline = 'middle';
     ctx.fillText('M A Siddiqui', labelCanvas.width / 2, labelCanvas.height / 2);
