@@ -1,13 +1,50 @@
 import React from 'react'
 import SectionTitle from '../../components/ui/SectionTitle.jsx'
 
+import hairDresserTemplate from '../../assets/hairDresserTemplate.png'
+import eventManagerTemplate from '../../assets/eventManagerTemplate.png'
+import doctorTemplate from '../../assets/doctorTemplate.png'
+import developerTemplate from '../../assets/developerTemplate.png'
+import lawyerTemplate from '../../assets/lawyerTemplate.png'
+import ceoTemplate from '../../assets/ceoTemplate.png'
+import musicianTemplate from '../../assets/musicianTemplate.png'
+import uiDesignerTemplate from '../../assets/uiDesignerTemplate.png'
+import taxiServicesTemplate from '../../assets/taxiServicesTemplate.png'
+import interiorDesignerTemplate from '../../assets/interiorDesignerTemplate.png'
+import handyManTemplate from '../../assets/handyManTemplate.png'
+
+const templates = [
+  { name: 'Hair Dresser', src: hairDresserTemplate },
+  { name: 'Event Manager', src: eventManagerTemplate },
+  { name: 'Doctor', src: doctorTemplate },
+  { name: 'Developer', src: developerTemplate },
+  { name: 'Lawyer', src: lawyerTemplate },
+  { name: 'CEO', src: ceoTemplate },
+  { name: 'Musician', src: musicianTemplate },
+  { name: 'UI Designer', src: uiDesignerTemplate },
+  { name: 'Taxi Services', src: taxiServicesTemplate },
+  { name: 'Interior Designer', src: interiorDesignerTemplate },
+  { name: 'Handy Man', src: handyManTemplate }
+]
+
 export default function TemplateGallery() {
   return (
     <section className="mx-auto max-w-7xl px-6 py-10">
-      <SectionTitle title="Template Gallery" />
-      <div className="grid md:grid-cols-3 gap-6">
-        {Array.from({ length: 6 }).map((_, i) => (
-          <div key={i} className="glass p-6 rounded-xl h-40" />
+      <SectionTitle title="Template Gallery" subtitle="Hover a card to preview with vertical pan" />
+      <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+        {templates.map((t) => (
+          <div
+            key={t.name}
+            className="group glass rounded-2xl overflow-hidden relative h-[520px]"
+          >
+            <div
+              className="absolute inset-0 bg-cover bg-no-repeat bg-top transition-[background-position] duration-[4500ms] ease-linear group-hover:bg-bottom"
+              style={{ backgroundImage: `url(${t.src})` }}
+            />
+            <div className="absolute inset-x-0 bottom-0 p-4 bg-gradient-to-t from-black/60 to-transparent">
+              <h3 className="text-lg font-semibold tracking-wide">{t.name}</h3>
+            </div>
+          </div>
         ))}
       </div>
     </section>
