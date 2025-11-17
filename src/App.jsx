@@ -1,4 +1,4 @@
-import React, { Suspense } from 'react'
+import React, { Suspense, useEffect } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
 import { useLocation } from 'react-router-dom'
 import Layout from './components/layout/Layout.jsx'
@@ -8,6 +8,10 @@ function App() {
   const location = useLocation()
 
   // Removed Lenis smooth scrolling to prevent scroll issues.
+
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [location.pathname])
 
   return (
     <Layout>

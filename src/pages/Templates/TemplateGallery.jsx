@@ -38,7 +38,7 @@ export default function TemplateGallery() {
             className="group glass rounded-2xl overflow-hidden relative h-[520px]"
           >
             <div
-              className="absolute inset-0 bg-cover bg-no-repeat bg-top transition-[background-position] duration-[4500ms] ease-linear group-hover:bg-bottom"
+              className="absolute inset-0 bg-cover bg-no-repeat bg-top transition-[background-position] duration-[6500ms] ease-linear group-hover:bg-bottom"
               style={{ backgroundImage: `url(${t.src})` }}
             />
             <div className="absolute inset-x-0 bottom-0 p-4 bg-gradient-to-t from-black/60 to-transparent">
