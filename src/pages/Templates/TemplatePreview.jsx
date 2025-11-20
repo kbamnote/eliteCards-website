@@ -39,10 +39,10 @@ export default function TemplatePreview() {
         <div className="lg:col-span-2">
           <div className="group glass rounded-2xl overflow-hidden relative h-[640px]">
             <div
-              className="absolute inset-0 bg-cover bg-no-repeat bg-top transition-[background-position] duration-[8000ms] ease-linear group-hover:bg-bottom"
+              className="absolute inset-0 bg-cover bg-no-repeat bg-top transition-[background-position] duration-8000 ease-linear group-hover:bg-bottom"
               style={{ backgroundImage: `url(${current.src})` }}
             />
-            <div className="absolute inset-x-0 bottom-0 p-5 bg-gradient-to-t from-black/60 to-transparent">
+            <div className="absolute inset-x-0 bottom-0 p-5 bg-linear-to-t from-black/60 to-transparent">
               <div className="flex items-center justify-between">
                 <h3 className="text-xl font-semibold tracking-wide">{current.name}</h3>
                 <button className="px-4 py-2 rounded-lg bg-accent text-black font-semibold">Use Template</button>
@@ -57,7 +57,7 @@ export default function TemplatePreview() {
               key={t.name}
               onClick={() => setSelected(idx)}
               className={`w-full flex items-center gap-3 glass rounded-xl p-3 transition-colors ${
-                selected === idx ? 'ring-2 ring-[var(--india-green)]' : ''
+                selected === idx ? 'ring-2 ring-(--india-green)' : ''
               }`}
             >
               <div
