@@ -1,17 +1,17 @@
 import React from 'react'
 import SectionTitle from '../../components/ui/SectionTitle.jsx'
 
-import hairDresserTemplate from '../../assets/hairDresserTemplate.png'
-import eventManagerTemplate from '../../assets/eventManagerTemplate.png'
-import doctorTemplate from '../../assets/doctorTemplate.png'
-import developerTemplate from '../../assets/developerTemplate.png'
-import lawyerTemplate from '../../assets/lawyerTemplate.png'
-import ceoTemplate from '../../assets/ceoTemplate.png'
-import musicianTemplate from '../../assets/musicianTemplate.png'
-import uiDesignerTemplate from '../../assets/uiDesignerTemplate.png'
-import taxiServicesTemplate from '../../assets/taxiServicesTemplate.png'
-import interiorDesignerTemplate from '../../assets/interiorDesignerTemplate.png'
-import handyManTemplate from '../../assets/handyManTemplate.png'
+import hairDresserTemplate from '../../assets/hairDresserTemplate.webp'
+import eventManagerTemplate from '../../assets/eventManagerTemplate.webp'
+import doctorTemplate from '../../assets/doctorTemplate.webp'
+import developerTemplate from '../../assets/developerTemplate.webp'
+import lawyerTemplate from '../../assets/lawyerTemplate.webp'
+import ceoTemplate from '../../assets/ceoTemplate.webp'
+import musicianTemplate from '../../assets/musicianTemplate.webp'
+import uiDesignerTemplate from '../../assets/uiDesignerTemplate.webp'
+import taxiServicesTemplate from '../../assets/taxiServicesTemplate.webp'
+import interiorDesignerTemplate from '../../assets/interiorDesignerTemplate.webp'
+import handyManTemplate from '../../assets/handyManTemplate.webp'
 
 const templates = [
   { name: 'Hair Dresser', src: hairDresserTemplate },
@@ -38,10 +38,10 @@ export default function TemplateGallery() {
             className="group glass rounded-2xl overflow-hidden relative h-[520px]"
           >
             <div
-              className="absolute inset-0 bg-cover bg-no-repeat bg-top transition-[background-position] duration-[6500ms] ease-linear group-hover:bg-bottom"
+              className="absolute inset-0 bg-cover bg-no-repeat bg-top transition-[background-position] duration-6500 ease-linear group-hover:bg-bottom"
               style={{ backgroundImage: `url(${t.src})` }}
             />
-            <div className="absolute inset-x-0 bottom-0 p-4 bg-gradient-to-t from-black/60 to-transparent">
+            <div className="absolute inset-x-0 bottom-0 p-4 bg-linear-to-t from-black/60 to-transparent">
               <h3 className="text-lg font-semibold tracking-wide">{t.name}</h3>
             </div>
           </div>

@@ -259,27 +259,27 @@ function NFCCardShowcase() {
   ];
 
   return (
-    <section className="relative min-h-screen bg-gradient-to-br from-[var(--rich-black)] via-[var(--dark-jungle-green)] to-[var(--rich-black)] px-6 py-20 overflow-hidden">
+    <section className="relative min-h-screen bg-linear-to-br from-(--rich-black) via-(--dark-jungle-green) to-(--rich-black) px-6 py-20 overflow-hidden">
       {/* Animated background elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-1/4 -left-48 w-96 h-96 rounded-full blur-3xl animate-pulse bg-[var(--india-green)]/20" />
-        <div className="absolute bottom-1/4 -right-48 w-96 h-96 rounded-full blur-3xl animate-pulse bg-[var(--yellow-green)]/20" style={{ animationDelay: '1s' }} />
+        <div className="absolute top-1/4 -left-48 w-96 h-96 rounded-full blur-3xl animate-pulse bg-(--india-green)/20" />
+        <div className="absolute bottom-1/4 -right-48 w-96 h-96 rounded-full blur-3xl animate-pulse bg-(--yellow-green)/20" style={{ animationDelay: '1s' }} />
       </div>
 
       <div className="relative max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-16 space-y-4">
           <div className="inline-block">
-            <span className="px-4 py-1.5 rounded-full bg-gradient-to-r from-[var(--india-green)]/15 to-[var(--yellow-green)]/15 border border-[var(--india-green)]/30 text-[var(--yellow-green)] text-sm font-medium">
+            <span className="px-4 py-1.5 rounded-full bg-linear-to-r from-(--india-green)/15 to-(--yellow-green)/15 border border-(--india-green)/30 text-(--yellow-green) text-sm font-medium">
               Next-Gen Payment Technology
             </span>
           </div>
           <h2 className="text-5xl md:text-6xl font-bold">
-            <span className="bg-gradient-to-r from-[var(--mango-green)] via-[var(--yellow-green)] to-[var(--india-green)] bg-clip-text text-transparent">
+            <span className="bg-linear-to-r from-(--mango-green) via-(--yellow-green) to-(--india-green) bg-clip-text text-transparent">
               Smart NFC Card
             </span>
           </h2>
-          <p className="text-xl text-[var(--text-secondary)] max-w-2xl mx-auto">
+          <p className="text-xl text-(--text-secondary) max-w-2xl mx-auto">
             Experience the future of secure, contactless transactions with cutting-edge NFC technology
           </p>
         </div>
@@ -289,8 +289,8 @@ function NFCCardShowcase() {
         {/* Main showcase */}
         <div className="grid lg:grid-cols-2 gap-12 items-center mb-20">
           <div className="relative group">
-            <div className="absolute -inset-1 bg-gradient-to-r from-[var(--mango-green)] to-[var(--india-green)] rounded-3xl blur-xl opacity-20 group-hover:opacity-40 transition duration-500" />
-            <div className="relative bg-gradient-to-br from-[var(--dark-jungle-green)]/80 to-[var(--rich-black)]/80 backdrop-blur-xl rounded-2xl p-2 border" style={{ borderColor: 'var(--text-secondary)' }}>
+            <div className="absolute -inset-1 bg-linear-to-r from-(--mango-green) to-(--india-green) rounded-3xl blur-xl opacity-20 group-hover:opacity-40 transition duration-500" />
+            <div className="relative bg-linear-to-br from-(--dark-jungle-green)/80 to-(--rich-black)/80 backdrop-blur-xl rounded-2xl p-2 border" style={{ borderColor: 'var(--text-secondary)' }}>
               <canvas
                 ref={canvasRef}
                 style={{ height: '480px', width: '100%', cursor: 'pointer' }}
@@ -302,27 +302,27 @@ function NFCCardShowcase() {
 
           <div className="space-y-8">
             <div className="space-y-4">
-              <h3 className="text-3xl md:text-4xl font-bold text-[var(--text-primary)]">
+              <h3 className="text-3xl md:text-4xl font-bold text-(--text-primary)">
                 Interactive 3D Experience
               </h3>
-              <p className="text-lg text-[var(--text-secondary)] leading-relaxed">
+              <p className="text-lg text-(--text-secondary) leading-relaxed">
                 Hover over the card to explore its premium design. Watch as the holographic elements shimmer, 
                 the NFC chip pulses with energy, and particles dance around this masterpiece of modern technology.
               </p>
             </div>
 
             <div className="flex flex-wrap gap-4">
-              <div className="px-6 py-3 rounded-lg bg-gradient-to-r from-[var(--india-green)]/10 to-[var(--yellow-green)]/10 border" style={{ borderColor: 'var(--india-green)' }}>
-                <div className="text-2xl font-bold text-[var(--yellow-green)]">13.56 MHz</div>
-                <div className="text-sm text-[var(--text-secondary)]">Frequency</div>
+              <div className="px-6 py-3 rounded-lg bg-linear-to-r from-(--india-green)/10 to-(--yellow-green)/10 border" style={{ borderColor: 'var(--india-green)' }}>
+                <div className="text-2xl font-bold text-(--yellow-green)">13.56 MHz</div>
+                <div className="text-sm text-(--text-secondary)">Frequency</div>
               </div>
-              <div className="px-6 py-3 rounded-lg bg-gradient-to-r from-[var(--mango-green)]/10 to-[var(--yellow-green)]/10 border" style={{ borderColor: 'var(--yellow-green)' }}>
-                <div className="text-2xl font-bold text-[var(--mango-green)]">{'<100ms>'}</div>
-                <div className="text-sm text-[var(--text-secondary)]">Response Time</div>
+              <div className="px-6 py-3 rounded-lg bg-linear-to-r from-(--mango-green)/10 to-(--yellow-green)/10 border" style={{ borderColor: 'var(--yellow-green)' }}>
+                <div className="text-2xl font-bold text-(--mango-green)">{'<100ms>'}</div>
+                <div className="text-sm text-(--text-secondary)">Response Time</div>
               </div>
-              <div className="px-6 py-3 rounded-lg bg-gradient-to-r from-[var(--india-green)]/10 to-[var(--mango-green)]/10 border" style={{ borderColor: 'var(--india-green)' }}>
-                <div className="text-2xl font-bold text-[var(--india-green)]">10cm</div>
-                <div className="text-sm text-[var(--text-secondary)]">Max Range</div>
+              <div className="px-6 py-3 rounded-lg bg-linear-to-r from-(--india-green)/10 to-(--mango-green)/10 border" style={{ borderColor: 'var(--india-green)' }}>
+                <div className="text-2xl font-bold text-(--india-green)">10cm</div>
+                <div className="text-sm text-(--text-secondary)">Max Range</div>
               </div>
             </div>
           </div>
@@ -331,8 +331,8 @@ function NFCCardShowcase() {
         {/* Features grid */}
         <div className="space-y-8">
           <div className="text-center">
-            <h3 className="text-3xl font-bold text-[var(--text-primary)] mb-3">Powerful Features</h3>
-            <p className="text-[var(--text-secondary)]">Everything you need for seamless contactless interactions</p>
+            <h3 className="text-3xl font-bold text-(--text-primary) mb-3">Powerful Features</h3>
+            <p className="text-(--text-secondary)">Everything you need for seamless contactless interactions</p>
           </div>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -341,16 +341,16 @@ function NFCCardShowcase() {
               return (
                 <div 
                   key={index}
-                  className="group relative bg-gradient-to-br from-[var(--dark-jungle-green)]/50 to-[var(--rich-black)]/50 backdrop-blur-sm rounded-xl p-6 border transition-all duration-500"
+                  className="group relative bg-linear-to-br from-(--dark-jungle-green)/50 to-(--rich-black)/50 backdrop-blur-sm rounded-xl p-6 border transition-all duration-500"
                   style={{ animationDelay: `${index * 100}ms`, borderColor: 'var(--dark-jungle-green)' }}
                 >
-                  <div className="absolute inset-0 bg-gradient-to-br from-[var(--india-green)]/0 to-[var(--yellow-green)]/0 group-hover:from-[var(--india-green)]/10 group-hover:to-[var(--yellow-green)]/10 rounded-xl transition-all duration-500" />
+                  <div className="absolute inset-0 bg-linear-to-br from-(--india-green)/0 to-(--yellow-green)/0 group-hover:from-(--india-green)/10 group-hover:to-(--yellow-green)/10 rounded-xl transition-all duration-500" />
                   <div className="relative">
-                    <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-[var(--india-green)] to-[var(--yellow-green)] flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
-                      <Icon className="w-6 h-6 text-[var(--text-primary)]" />
+                    <div className="w-12 h-12 rounded-lg bg-linear-to-br from-(--india-green) to-(--yellow-green) flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+                      <Icon className="w-6 h-6 text-(--text-primary)" />
                     </div>
                     <h4 className="text-lg font-semibold text-white mb-2">{feature.title}</h4>
-                    <p className="text-[var(--text-secondary)] text-sm leading-relaxed">{feature.description}</p>
+                    <p className="text-(--text-secondary) text-sm leading-relaxed">{feature.description}</p>
                   </div>
                 </div>
               );
@@ -361,9 +361,9 @@ function NFCCardShowcase() {
         {/* CTA */}
         <div className="mt-16 text-center">
           <button className="group relative px-8 py-4 rounded-xl overflow-hidden">
-            <div className="absolute inset-0 bg-gradient-to-r from-[var(--mango-green)] to-[var(--india-green)] transition-transform duration-300 group-hover:scale-105" />
-            <div className="absolute inset-0 bg-gradient-to-r from-[var(--yellow-green)] to-[var(--india-green)] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-            <span className="relative text-[var(--rich-black)] font-semibold text-lg flex items-center gap-2">
+            <div className="absolute inset-0 bg-linear-to-r from-(--mango-green) to-(--india-green) transition-transform duration-300 group-hover:scale-105" />
+            <div className="absolute inset-0 bg-linear-to-r from-(--yellow-green) to-(--india-green) opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+            <span className="relative text-(--rich-black) font-semibold text-lg flex items-center gap-2">
               Get Your Smart Card
               <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" style={{ color: 'var(--rich-black)' }}>
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />

@@ -1,17 +1,17 @@
 import React, { useState } from 'react'
 import SectionTitle from '../../components/ui/SectionTitle.jsx'
 
-import hairDresserTemplate from '../../assets/hairDresserTemplate.png'
-import eventManagerTemplate from '../../assets/eventManagerTemplate.png'
-import doctorTemplate from '../../assets/doctorTemplate.png'
-import developerTemplate from '../../assets/developerTemplate.png'
-import lawyerTemplate from '../../assets/lawyerTemplate.png'
-import ceoTemplate from '../../assets/ceoTemplate.png'
-import musicianTemplate from '../../assets/musicianTemplate.png'
-import uiDesignerTemplate from '../../assets/uiDesignerTemplate.png'
-import taxiServicesTemplate from '../../assets/taxiServicesTemplate.png'
-import interiorDesignerTemplate from '../../assets/interiorDesignerTemplate.png'
-import handyManTemplate from '../../assets/handyManTemplate.png'
+import hairDresserTemplate from '../../assets/hairDresserTemplate.webp'
+import eventManagerTemplate from '../../assets/eventManagerTemplate.webp'
+import doctorTemplate from '../../assets/doctorTemplate.webp'
+import developerTemplate from '../../assets/developerTemplate.webp'
+import lawyerTemplate from '../../assets/lawyerTemplate.webp'
+import ceoTemplate from '../../assets/ceoTemplate.webp'
+import musicianTemplate from '../../assets/musicianTemplate.webp'
+import uiDesignerTemplate from '../../assets/uiDesignerTemplate.webp'
+import taxiServicesTemplate from '../../assets/taxiServicesTemplate.webp'
+import interiorDesignerTemplate from '../../assets/interiorDesignerTemplate.webp'
+import handyManTemplate from '../../assets/handyManTemplate.webp'
 
 const templates = [
   { name: 'Developer', src: developerTemplate },
