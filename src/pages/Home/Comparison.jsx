@@ -1,7 +1,14 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { CheckCircle } from 'lucide-react'
+import EnrollmentModal from '../../modal/EnrollmentModal'
 
 function Comparison() {
+  const [showEnrollmentModal, setShowEnrollmentModal] = useState(false)
+
+  const handleGetStartedClick = (e) => {
+    e.preventDefault();
+    setShowEnrollmentModal(true);
+  };
   const paperPoints = [
     'Easily Lost or Damaged',
     'You forget it.',
@@ -66,11 +73,15 @@ function Comparison() {
 
       {/* CTA */}
       <div className="mt-10 text-center">
-        <a className="inline-block px-8 py-4 rounded-xl bg-gradient-to-r from-[var(--mango-green)] to-[var(--india-green)] hover:from-[var(--yellow-green)] hover:to-[var(--india-green)] text-[var(--rich-black)] font-semibold transition shadow-lg" href="#">
+        <a onClick={handleGetStartedClick} className="inline-block px-8 py-4 rounded-xl bg-gradient-to-r from-[var(--mango-green)] to-[var(--india-green)] hover:from-[var(--yellow-green)] hover:to-[var(--india-green)] text-[var(--rich-black)] font-semibold transition shadow-lg" href="#">
           Get Your Smart Card
         </a>
         <p className="mt-3 text-sm text-[var(--text-secondary)]">100% Lifetime Guarantee</p>
       </div>
+      <EnrollmentModal
+        isOpen={showEnrollmentModal}
+        onClose={() => setShowEnrollmentModal(false)}
+      />
     </section>
   )
 }

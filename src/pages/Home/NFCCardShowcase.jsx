@@ -2,12 +2,21 @@ import React, { useRef, useState, useEffect } from 'react';
 import { Camera, Zap, Shield, Wifi } from 'lucide-react';
 import * as THREE from 'three';
 import { theme } from '../../styles/theme';
+import EnrollmentModal from '../../modal/EnrollmentModal';
 
 function NFCCardShowcase() {
+
   const canvasRef = useRef(null);
   const sceneRef = useRef(null);
   const [isHovered, setIsHovered] = useState(false);
   const isHoveredRef = useRef(false);
+  const [showEnrollmentModal, setShowEnrollmentModal] = useState(false)
+
+  const handleGetStartedClick = (e) => {
+    e.preventDefault();
+    setShowEnrollmentModal(true);
+  };
+
 
   useEffect(() => {
     if (!canvasRef.current) return;
@@ -16,7 +25,7 @@ function NFCCardShowcase() {
     const scene = new THREE.Scene();
     const camera = new THREE.PerspectiveCamera(45, canvas.clientWidth / canvas.clientHeight, 0.1, 1000);
     const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true });
-    
+
     renderer.setSize(canvas.clientWidth, canvas.clientHeight);
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
     renderer.toneMapping = THREE.ACESFilmicToneMapping;
@@ -29,14 +38,14 @@ function NFCCardShowcase() {
       canvas.width = 512;
       canvas.height = 512;
       const ctx = canvas.getContext('2d');
-      
+
       // Sky gradient
       const gradient = ctx.createLinearGradient(0, 0, 0, canvas.height);
       gradient.addColorStop(0, '#87CEEB');
       gradient.addColorStop(1, '#ffffff');
       ctx.fillStyle = gradient;
       ctx.fillRect(0, 0, canvas.width, canvas.height);
-      
+
       // Buildings
       ctx.fillStyle = '#444444';
       for (let i = 0; i < 50; i++) {
@@ -45,7 +54,7 @@ function NFCCardShowcase() {
         const height = 50 + Math.random() * 200;
         const y = canvas.height - height;
         ctx.fillRect(x, y, width, height);
-        
+
         // Windows
         ctx.fillStyle = '#FFFF00';
         for (let j = 0; j < 10; j++) {
@@ -55,7 +64,7 @@ function NFCCardShowcase() {
         }
         ctx.fillStyle = '#444444';
       }
-      
+
       // Convert to texture
       const texture = new THREE.CanvasTexture(canvas);
       return texture;
@@ -156,11 +165,11 @@ function NFCCardShowcase() {
     const particlesGeometry = new THREE.BufferGeometry();
     const particlesCount = 150;
     const positions = new Float32Array(particlesCount * 3);
-    
+
     for (let i = 0; i < particlesCount * 3; i++) {
       positions[i] = (Math.random() - 0.5) * 8;
     }
-    
+
     particlesGeometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
     const particlesMaterial = new THREE.PointsMaterial({
       color: 0x00ffff,
@@ -200,7 +209,7 @@ function NFCCardShowcase() {
       time += 0.01;
 
       card.position.y = Math.sin(time * 0.8) * 0.1;
-      
+
       if (isHoveredRef.current) {
         card.rotation.y += 0.02;
         card.rotation.x = Math.sin(time) * 0.1;
@@ -210,7 +219,7 @@ function NFCCardShowcase() {
       }
 
       particles.rotation.y += 0.001;
-      
+
       strip.material.emissiveIntensity = 0.5 + Math.sin(time * 2) * 0.3;
       circuit.rotation.z += 0.02;
 
@@ -306,7 +315,7 @@ function NFCCardShowcase() {
                 Interactive 3D Experience
               </h3>
               <p className="text-lg text-(--text-secondary) leading-relaxed">
-                Hover over the card to explore its premium design. Watch as the holographic elements shimmer, 
+                Hover over the card to explore its premium design. Watch as the holographic elements shimmer,
                 the NFC chip pulses with energy, and particles dance around this masterpiece of modern technology.
               </p>
             </div>
@@ -334,12 +343,12 @@ function NFCCardShowcase() {
             <h3 className="text-3xl font-bold text-(--text-primary) mb-3">Powerful Features</h3>
             <p className="text-(--text-secondary)">Everything you need for seamless contactless interactions</p>
           </div>
-          
+
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {features.map((feature, index) => {
               const Icon = feature.icon;
               return (
-                <div 
+                <div
                   key={index}
                   className="group relative bg-linear-to-br from-(--dark-jungle-green)/50 to-(--rich-black)/50 backdrop-blur-sm rounded-xl p-6 border transition-all duration-500"
                   style={{ animationDelay: `${index * 100}ms`, borderColor: 'var(--dark-jungle-green)' }}
@@ -360,7 +369,7 @@ function NFCCardShowcase() {
 
         {/* CTA */}
         <div className="mt-16 text-center">
-          <button className="group relative px-8 py-4 rounded-xl overflow-hidden">
+          <button onClick={handleGetStartedClick} className="group relative px-8 py-4 rounded-xl overflow-hidden">
             <div className="absolute inset-0 bg-linear-to-r from-(--mango-green) to-(--india-green) transition-transform duration-300 group-hover:scale-105" />
             <div className="absolute inset-0 bg-linear-to-r from-(--yellow-green) to-(--india-green) opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
             <span className="relative text-(--rich-black) font-semibold text-lg flex items-center gap-2">
@@ -372,6 +381,10 @@ function NFCCardShowcase() {
           </button>
         </div>
       </div>
+      <EnrollmentModal
+        isOpen={showEnrollmentModal}
+        onClose={() => setShowEnrollmentModal(false)}
+      />
     </section>
   );
 }

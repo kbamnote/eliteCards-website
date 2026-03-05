@@ -1,8 +1,15 @@
-import React from 'react'
+import React, { useState } from 'react'
+import EnrollmentModal from '../../modal/EnrollmentModal';
 
 const GIF_URL = 'https://media.giphy.com/media/RBV67igNyGXT4fQdjx/giphy.gif'
 
 function WhyNfc() {
+    const [showEnrollmentModal, setShowEnrollmentModal] = useState(false)
+  
+    const handleGetStartedClick = (e) => {
+      e.preventDefault();
+      setShowEnrollmentModal(true);
+    };
   const audiences = [
     'Doctors & Healthcare Providers',
     'Photographers & Designers',
@@ -45,7 +52,7 @@ function WhyNfc() {
           </p>
 
           <div className="mt-6">
-            <a className="inline-block px-6 py-3 rounded-xl bg-gradient-to-r from-[var(--mango-green)] to-[var(--india-green)] hover:from-[var(--yellow-green)] hover:to-[var(--india-green)] text-[var(--rich-black)] font-semibold shadow-lg" href="#">
+            <a onClick={handleGetStartedClick} className="inline-block px-6 py-3 rounded-xl bg-gradient-to-r from-[var(--mango-green)] to-[var(--india-green)] hover:from-[var(--yellow-green)] hover:to-[var(--india-green)] text-[var(--rich-black)] font-semibold shadow-lg" href="#">
               Get Your Smart Card
             </a>
           </div>
@@ -63,6 +70,10 @@ function WhyNfc() {
           />
         </div>
       </div>
+      <EnrollmentModal
+        isOpen={showEnrollmentModal}
+        onClose={() => setShowEnrollmentModal(false)}
+      />
     </section>
   )
 }

@@ -251,6 +251,90 @@ export default function MissionVision() {
           </Canvas>
         </LazyInView>
       </div>
+      {/* ================= NFC & METAL CARD DETAILS ================= */}
+<div className="mt-20 grid md:grid-cols-2 gap-10">
+  
+  {/* NFC CARD INFO */}
+  <div
+    className="rounded-2xl p-8 border bg-[#0B0F1A]/80 backdrop-blur-md"
+    style={{ borderColor: 'var(--dark-jungle-green)' }}
+  >
+    <h3
+      className="text-xl md:text-2xl font-semibold"
+      style={{ color: 'var(--text-primary)' }}
+    >
+      NFC Cards
+    </h3>
+
+    <p
+      className="mt-3 text-sm md:text-base"
+      style={{ color: 'var(--text-secondary)' }}
+    >
+      NFC cards are smart digital business cards that allow instant sharing of
+      your contact details, social profiles, and websites with a single tap.
+      They replace traditional paper cards with a modern, eco-friendly solution.
+    </p>
+
+    <ul className="mt-5 space-y-3">
+      {[
+        "One-tap sharing using NFC technology",
+        "Works seamlessly on Android & iPhone",
+        "No mobile app required",
+        "Editable digital profile anytime",
+        "Supports links, contact info, and social media",
+        "Eco-friendly alternative to paper cards",
+      ].map((item) => (
+        <li key={item} className="flex gap-3">
+          <span className="mt-1 w-2 h-2 rounded-full bg-[var(--yellow-green)]" />
+          <span className="text-sm" style={{ color: 'var(--text-secondary)' }}>
+            {item}
+          </span>
+        </li>
+      ))}
+    </ul>
+  </div>
+
+  {/* METAL CARD INFO */}
+  <div
+    className="rounded-2xl p-8 border bg-[#0B0F1A]/80 backdrop-blur-md"
+    style={{ borderColor: 'var(--dark-jungle-green)' }}
+  >
+    <h3
+      className="text-xl md:text-2xl font-semibold"
+      style={{ color: 'var(--text-primary)' }}
+    >
+      Metal Cards
+    </h3>
+
+    <p
+      className="mt-3 text-sm md:text-base"
+      style={{ color: 'var(--text-secondary)' }}
+    >
+      Metal cards are premium, luxury business cards crafted from stainless
+      steel or alloy materials. Designed for professionals who want to make a
+      powerful and lasting first impression.
+    </p>
+
+    <ul className="mt-5 space-y-3">
+      {[
+        "Premium stainless steel or alloy body",
+        "Precision laser-engraved name & logo",
+        "Built-in NFC smart technology",
+        "Scratch-resistant & water-resistant",
+        "Heavier feel for a luxury experience",
+        "Ideal for founders, executives & premium brands",
+      ].map((item) => (
+        <li key={item} className="flex gap-3">
+          <span className="mt-1 w-2 h-2 rounded-full bg-[var(--yellow-green)]" />
+          <span className="text-sm" style={{ color: 'var(--text-secondary)' }}>
+            {item}
+          </span>
+        </li>
+      ))}
+    </ul>
+  </div>
+
+</div>
     </section>
   )
 }

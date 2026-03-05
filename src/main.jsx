@@ -4,6 +4,7 @@ import { BrowserRouter } from 'react-router-dom'
 import './index.css'
 import './styles/globals.css'
 import App from './App.jsx'
+import ChatBot from './pages/Chatbot.jsx'
 
 // Preload critical 3D assets for better performance
 const preload3DAssets = () => {
@@ -28,6 +29,7 @@ createRoot(document.getElementById('root')).render(
   <StrictMode>
     <BrowserRouter>
       <App />
+      <ChatBot/>
     </BrowserRouter>
   </StrictMode>
 )

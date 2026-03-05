@@ -49,5 +49,6 @@ export default function AppRoutes() {
         </Suspense>
       } />
     </Routes>
+    
   )
 }
