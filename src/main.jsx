@@ -4,7 +4,7 @@ import { BrowserRouter } from 'react-router-dom'
 import './index.css'
 import './styles/globals.css'
 import App from './App.jsx'
-import ChatBot from './pages/Chatbot.jsx'
+import ChatBot from './pages/ChatBot.jsx'
 
 // Preload critical 3D assets for better performance
 const preload3DAssets = () => {
