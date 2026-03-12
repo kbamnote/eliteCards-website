@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import SectionTitle from "../../components/ui/SectionTitle.jsx";
-import premiumCardImg from "../../assets/nfcCard/nfc1.jpg";
+import premiumCardImg from "../../assets/NFCcard/nfc1.jpg";
 import goldCardImg from "../../assets/NFCcard/nfc2.jpg";
 import googleReviewImg from "../../assets/NFCcard/nfc3.jpg";
 import EnquiryModal from "../../modal/EnquiryModal.jsx";

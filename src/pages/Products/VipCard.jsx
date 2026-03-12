@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import SectionTitle from '../../components/ui/SectionTitle.jsx'
-import premiumCardImg from '../../assets/nfcCard/nfc1.jpg'
 import vip1 from '../../assets/Vipcard/vip1.jpg'
 import vip2 from '../../assets/Vipcard/vip2.jpg'
 import vip3 from '../../assets/Vipcard/vip3.jpg'

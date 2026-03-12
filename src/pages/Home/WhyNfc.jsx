@@ -14,7 +14,7 @@ function WhyNfc() {
     'Doctors & Healthcare Providers',
     'Photographers & Designers',
     'Tour Operators & Hotel Managers',
-    'YouTubers, Influencers & Bloggers',
+    'YouTubers, Influencers & Bloggers', 
     'Trainers, Coaches & Educators',
     'Retailers & Small Business Owners',
   ]
