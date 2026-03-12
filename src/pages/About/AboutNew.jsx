@@ -15,7 +15,7 @@ const faqs = [
   {
     question: "Do NFC cards work on all smartphones?",
     answer:
-      "Yes. NFC cards work on most modern Android phones and iPhones. For phones without NFC support, a QR code can be used as a fallback.",
+      "Yes. NFC cards work on ijmost modern Android phones and iPhones. For phones without NFC support, a QR code can be used as a fallback.",
   },
   {
     question: "Is an app required to use an NFC card?",

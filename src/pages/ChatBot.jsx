@@ -159,7 +159,7 @@ const ChatBot = () => {
       {!isOpen && (
         <button
           onClick={() => setIsOpen(true)}
-          className="fixed bottom-16 right-8 z-[9999] w-14 h-14 rounded-full bg-indigo-600 border border-gray-700 flex items-center justify-center shadow-lg hover:scale-110 transition"
+          className="fixed bottom-16 right-8 z-9999 w-14 h-14 rounded-full bg-indigo-600 border border-gray-700 flex items-center justify-center shadow-lg hover:scale-110 transition"
         >
           <MessageCircle className="text-white w-6 h-6" />
         </button>
@@ -168,7 +168,7 @@ const ChatBot = () => {
       {/* Chat Window */}
       {isOpen && (
         <div
-          className={`fixed bottom-4 right-4 z-[9999] w-[380px] transition-all ${
+          className={`fixed bottom-4 right-4 z-9999 w-[380px] transition-all ${
             isMinimized ? "h-14" : "h-[420px]"
           }`}
         >
